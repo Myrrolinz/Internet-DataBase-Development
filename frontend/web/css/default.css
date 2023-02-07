@@ -1,0 +1,134 @@
+/**
+ * Team:ddl驱动队,NKU
+ * coding by sunyiqi 2012810,20230201
+ */
+
+
+
+a {
+	text-decoration: blink;
+}
+
+a#big {
+	text-align: center; 
+	color: rgb(15, 15, 15);
+}
+
+body {
+	background: #FFF ;/*大的背景颜色*/ 
+	text-align: center;
+	height: 100%;
+}
+
+body,.image,h1,p {
+	margin: 0; 
+	padding: 0;
+}
+
+.main {
+	background: #FFF; 
+	width: 1280px; 
+	margin: 0 auto; 
+	border-bottom: 0; 
+	border-top: 0; 
+	text-align: left;
+}
+
+.content {
+	float: left;
+	position: relative;
+	top:-1840px;
+	left: 21%;
+	width: 80%;
+	clear: both; 
+	border: 10px solid rgb(250, 252, 253); 
+	color: #CCC;
+	z-index:0;
+}
+
+.content h1 {
+	font: normal 1.4em sans-serif,Arial;
+	padding: 2px 6px; 
+	background:  rgb(235, 235, 235); 
+	font-weight: bold;
+	color: #FFF;
+	border: 10px solid rgb(250, 252, 253);
+	z-index: -2;
+}
+
+.content h1 span {
+	color: rgb(61, 59, 59);/*大字的颜色*/
+}
+
+.content h1 span:hover {
+	color: #000;
+	font-weight: bold;
+}
+
+.content p {
+	font: normal 1.0em Verdana,Arial; 
+	padding: 6px 6px 10px;
+	color: #000;
+}
+
+.content p:hover {
+	color: #000;
+	font-weight: bold;
+}
+
+a#big {
+	font: normal 4em sans-serif, Arial;
+	background: #fff;
+	display: block;
+	margin-top: 80px;
+}
+.gfx_nav {
+	height: 50px; 
+	width: 230px;
+	background: #fff;
+}
+
+.header_left {
+	float: left; 
+	position: relative;
+	top:-39px;
+	width: 250px; 
+	height: 1800px; 
+	border: 10px solid rgb(250, 252, 253);
+	border-top: 10px solid rgb(250, 252, 253);
+	background: #FFF;
+	z-index: 0;
+}
+
+.header_right {
+	position: relative;
+	left:700px;
+	float: left; 
+	width: 980px; 
+	height: 340px; 
+	background:#fff;
+}
+
+.menu a {
+	font: normal 1.4em sans-serif,Arial; 
+	color: #000; 
+	background: rgb(250, 252, 253);
+	display: block; 
+	margin-top: 20px; 
+	width: 230px; 
+	height: 100%;
+	position:relative; /* 绝对定位，fixed是相对于浏览器窗口定位。 */
+    top:10px; /* 距离窗口顶部距离 */
+}
+
+.menu a span {
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	padding-left: 10px; 
+	color: #000;
+}
+
+.menu a:hover {
+	color: rgb(94, 2, 2);
+	font-weight: bold;
+}
