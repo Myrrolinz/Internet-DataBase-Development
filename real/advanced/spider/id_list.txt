@@ -1,0 +1,179 @@
+1	Afghanistan	阿富汗
+2	Angola	安哥拉
+3	Albania	阿尔巴尼亚
+4	United Arab Emirates	阿拉伯联合酋长国
+5	Argentina	阿根廷
+6	Armenia	亚美尼亚
+7	French Southern and Antarctic Lands	法属南部群岛
+8	Australia	澳大利亚
+9	Austria	奥地利
+10	Azerbaijan	阿塞拜疆
+11	Burundi	布隆迪
+12	Belgium	比利时
+13	Benin	贝宁
+14	Burkina Faso	布吉纳法索
+15	Bangladesh	孟加拉国
+16	Bulgaria	保加利亚
+17	The Bahamas	巴哈马群岛
+18	Bosnia and Herzegovina	波斯尼亚和黑塞哥维那
+19	Belarus	白俄罗斯
+20	Belize	伯利兹
+21	Bermuda	百慕大
+22	Bolivia	玻利维亚
+23	Brazil	巴西
+24	Brunei	文莱
+25	Bhutan	不丹
+26	Botswana	博茨瓦纳
+27	Central African Republic	中非共和国
+28	Canada	加拿大
+29	Switzerland	瑞士
+30	Chile	智利
+31	China	中国
+32	Ivory Coast	科特迪瓦
+33	Cameroon	喀麦隆
+34	Democratic Republic of the Congo	刚果民主共和国
+35	Republic of the Congo	刚果共和国
+36	Colombia	哥伦比亚
+37	Costa Rica	哥斯达黎加
+38	Cuba	古巴
+39	Northern Cyprus	北塞浦路斯
+40	Cyprus	塞浦路斯
+41	Czech Republic	捷克共和国
+42	Germany	德国
+43	Djibouti	吉布提
+44	Denmark	丹麦
+45	Dominican Republic	多米尼加共和国
+46	Algeria	阿尔及利亚
+47	Ecuador	厄瓜多尔
+48	Egypt	埃及
+49	Eritrea	厄立特里亚
+50	Spain	西班牙
+51	Estonia	爱沙尼亚
+52	Ethiopia	埃塞俄比亚
+53	Finland	芬兰
+54	Fiji	斐济
+55	Falkland Islands	福克兰群岛
+56	France	法国
+57	Gabon	加蓬
+58	United Kingdom	英国
+59	Georgia	乔治亚州
+60	Ghana	加纳
+61	Guinea	几内亚
+62	Gambia	冈比亚
+63	Guinea Bissau	几内亚比绍
+64	Equatorial Guinea	赤道几内亚
+65	Greece	希腊
+66	Greenland	格陵兰岛
+67	Guatemala	危地马拉
+68	French Guiana	法属圭亚那
+69	Guyana	圭亚那
+70	Honduras	洪都拉斯
+71	Croatia	克罗地亚
+72	Haiti	海地
+73	Hungary	匈牙利
+74	Indonesia	印尼
+75	India	印度
+76	Ireland	爱尔兰
+77	Iran	伊朗
+78	Iraq	伊拉克
+79	Iceland	冰岛
+80	Israel	以色列
+81	Italy	意大利
+82	Jamaica	牙买加
+83	Jordan	约旦
+84	Japan	日本
+85	Kazakhstan	哈萨克斯坦
+86	Kenya	肯尼亚
+87	Kyrgyzstan	吉尔吉斯斯坦
+88	Cambodia	柬埔寨
+89	South Korea	韩国
+90	Kosovo	科索沃
+91	Kuwait	科威特
+92	Laos	老挝
+93	Lebanon	黎巴嫩
+94	Liberia	利比里亚
+95	Libya	利比亚
+96	Sri Lanka	斯里兰卡
+97	Lesotho	莱索托
+98	Lithuania	立陶宛
+99	Luxembourg	卢森堡
+100	Latvia	拉脱维亚
+101	Morocco	摩洛哥
+102	Moldova	摩尔多瓦
+103	Madagascar	马达加斯加
+104	Mexico	墨西哥
+105	Macedonia	马其顿
+106	Mali	马里
+107	Malta	马耳他
+108	Myanmar	缅甸
+109	Montenegro	黑山共和国
+110	Mongolia	蒙古
+111	Mozambique	莫桑比克
+112	Mauritania	毛利塔尼亚
+113	Malawi	马拉维
+114	Malaysia	马来西亚
+115	Namibia	纳米比亚
+116	New Caledonia	新喀里多尼亚
+117	Niger	尼日尔
+118	Nigeria	尼日利亚
+119	Nicaragua	尼加拉瓜
+120	Netherlands	荷兰
+121	Norway	挪威
+122	Nepal	尼泊尔
+123	New Zealand	新西兰
+124	Oman	阿曼
+125	Pakistan	巴基斯坦
+126	Panama	巴拿马
+127	Peru	秘鲁
+128	Philippines	菲律宾
+129	Papua New Guinea	巴布新几内亚
+130	Poland	波兰
+131	Puerto Rico	波多黎各
+132	North Korea	朝鲜
+133	Portugal	葡萄牙
+134	Paraguay	巴拉圭
+135	Qatar	卡塔尔
+136	Romania	罗马尼亚
+137	Russia	俄罗斯
+138	Rwanda	卢旺达
+139	Western Sahara	西撒哈拉
+140	Saudi Arabia	沙特阿拉伯
+141	Sudan	苏丹
+142	South Sudan	南苏丹
+143	Senegal	塞内加尔
+144	Solomon Islands	所罗门群岛
+145	Sierra Leone	塞拉利昂
+146	El Salvador	萨尔瓦多
+147	Somaliland	索马里兰
+148	Somalia	索马里
+149	Republic of Serbia	塞尔维亚共和国
+150	Suriname	苏里南
+151	Slovakia	斯洛伐克
+152	Slovenia	斯洛文尼亚
+153	Sweden	瑞典
+154	Swaziland	斯威士兰
+155	Syria	叙利亚
+156	Chad	乍得
+157	Togo	多哥
+158	Thailand	泰国
+159	Tajikistan	塔吉克斯坦
+160	Turkmenistan	土库曼斯坦
+161	East Timor	东帝汶
+162	Trinidad and Tobago	特立尼达和多巴哥
+163	Tunisia	突尼斯
+164	Turkey	土耳其
+165	Taiwan	中国台湾
+166	United Republic of Tanzania	坦桑尼亚联合共和国
+167	Uganda	乌干达
+168	Ukraine	乌克兰
+169	Uruguay	乌拉圭
+170	United States of America	美国
+171	Uzbekistan	乌兹别克斯坦
+172	Venezuela	委内瑞拉
+173	Vietnam	越南
+174	Vanuatu	瓦努阿图
+175	West Bank	约旦河西岸与加沙地区
+176	Yemen	也门
+177	South Africa	南非
+178	Zambia	赞比亚
+179	Zimbabwe	津巴布韦
