@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team:ddl驱动队,NKU
+ * coding by sunyiqi 2012810,202302008
+ * 密码相关页面
+ */
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \frontend\models\PasswordResetRequestForm */

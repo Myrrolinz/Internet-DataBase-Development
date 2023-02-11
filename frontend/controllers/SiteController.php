@@ -1,4 +1,9 @@
 <?php
+/**
+ * Team:ddl驱动队,NKU
+ * coding by sunyiqi 2012810,20230205
+ * actionabout相关，news相关
+ */
 namespace frontend\controllers;
 
 use frontend\models\ResendVerificationEmailForm;
@@ -14,6 +19,8 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+
+use common\models\News;
 
 /**
  * Site controller
@@ -74,7 +81,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $data=News::getAll(6);
+        return $this->render('index',[
+            'news'=>$data['news'],
+        ]);
     }
 
     /**
@@ -119,6 +129,7 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
+        $this->layout = false;
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
@@ -144,6 +155,76 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+    /**
+     * Displays about page.
+     *
+     * @return mixed
+     */
+    public function actionAbout1()
+    {
+		$this->layout="ab";
+        return $this->render('about1');
+    }
+    /**
+     * Displays about page.
+     *
+     * @return mixed
+     */
+    public function actionAbout2()
+    {
+		$this->layout="ab";
+        return $this->render('about2');
+    }
+    /**
+     * Displays about page.
+     *
+     * @return mixed
+     */
+    public function actionTimeline()
+    {
+        return $this->render('timeline');
+    }
+
+    /**
+     * Displays news page.
+     *
+     * @return mixed
+     */
+    public function actionNews()
+    {
+        return $this->render('news');
+    }
+
+    /**
+     * Displays research page.
+     *
+     * @return mixed
+     */
+    public function actionPredictDiscussion()
+    {
+        $query = PredictDiscussion::find();
+
+        $pagination = new Pagination([
+            'defaultPageSize' => 5,
+            'totalCount' => $query->count(),
+        ]);
+
+        $PredictDiscussion = $query->orderBy('id')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+        return $this->render('research', [
+            'covresearch' => $PredictDiscussion,
+            'pagination' => $pagination,
+        ]);
+    }
+    public function actionResearch()
+    {
+        return $this->render('research');
+    }
+    
+    
 
     /**
      * Signs user up.

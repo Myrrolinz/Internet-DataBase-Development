@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team:ddl驱动队,NKU
+ * coding by sunyiqi 2012810,20230205
+ * error页面
+ */
 /* @var $this yii\web\View */
 /* @var $name string */
 /* @var $message string */

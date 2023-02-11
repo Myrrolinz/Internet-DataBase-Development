@@ -1,53 +1,152 @@
 <?php
+use common\models\Visit;
+use yii\helpers\Url;
+/**
+ * Team:ddl驱动队,NKU
+ * coding by sunyiqi 2012810,202302008
+ * home页面
+ */
+use yii\helpers\Html;
+use yii\data\Pagination;
+use yii\web\Response;
+use yii\web\Controller;
+use yii\widgets\LinkPager;
 
-/* @var $this yii\web\View */
-
-$this->title = 'My Yii Application';
+use frontend\models\Timeline;
 ?>
+
+<?php
+/* @var $this yii\web\View */
+$this->registerCssFile('@web/css/home.css');
+$this->registerJsFile('@web/js/home.js');
+
+
+$this->registerCssFile('@web/css/leaflet.css');
+$this->registerCssFile('@web/css/plague-map.css');
+$this->registerJsFile("@web/js/jquery-3.4.1.min.js");
+$this->registerJsFile("@web/js/leaflet.js");
+$this->registerJsFile("@web/js/plague-map.js");
+
+$this->registerCssFile('@web/css/timeline.css');
+$this->registerJsFile('@web/js/timeline.js');
+$this->registerCssFile('@web/css/timeline.min.css');
+$this->registerJsFile('@web/js/timeline.min.js');
+
+
+$this->registerCssFile('@web/css/animate.min.css');
+$this->registerJsFile('@web/js/jquery-3.4.1.min.js');
+
+$url = Yii::getAlias("@web") . '/img/';
+
+$this->title = '俄乌战争资料站';
+?>
+
+
+
 <div class="site-index">
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
+    <!-- 下面第3行是疫情地图的占位符！！！！！！！注意别删了！！！！ -->
+    <!-- 下面第2行是疫情地图的占位符！！！！！！！注意别删了！！！！ -->
+    <!-- 下面这行是疫情地图的占位符！！！！！！！注意别删了！！！！ -->
+    <div id="plague-map"></div>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
 
-    <div class="body-content">
+    <div class="form-group">
+			<?= Html::submitButton('点击查看俄乌冲突时间线', ['class' => 'sbtn', 'name' => 'login-button', 'onclick'=>'window.open("site/timeline")' ]) ?>
+	</div>
+		<style type="text/css">
+			.sbtn {
+				top: 50px;
+				left: 550px;
+				position: relative;
+				width: 250px;
+				height: 50px;
+				background: white;
+				color:#000;
+				border: 5px solid white;
+				box-shadow: 0px 0px 10px 5px #aaa;
+				border-radius: 30px;
+				transition: .5s;
+				display: flex;
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+                font-size: 20px;
+                line-height:40px;
+			}
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+			.sbtn:hover {
+				background-color: #c55;
+				color: white;
+				border: 5px solid white;
+				display: flex;
+			}
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+		</style>
+
+
+
+    <section class="slider"></section>
+    <div class="container">
+        <div class="card-carousel">
+            <div class="card" id="1">
+                <div class="sliderThumb" style=" background:url(<?= $url ?>7.jpg) 50% 50% no-repeat; background-size:cover;height:60%;width:100%">
+
+                </div>
+                <div class="sliderCaption" style="text-align:center;padding:20px 20px 0px">
+                    <a href="<?= $news[0]->sourceUrl ?>" style="font-size: 22px;font-weight:600;color:#4a0d66"><?=$news[0]->title?></a>
+                    <p style="font-size: 0.8rem;padding-top: 10px;"><?=$news[0]->summary?></p>
+                    <p>
+                        <a href="<?=Url::toRoute(['news/index']);?>" class="btn btn-secondary">更多新闻</a>
+                    </p>
+                </div>
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+            <div class="card" id="2">
+                <div class="sliderThumb" style=" background:url(<?= $url ?>8.jpg) 50% 50% no-repeat; background-size:cover;height:60%;width:100%">
+                </div>
+                <div class="sliderCaption">
+                    <a href="<?= $news[2]->sourceUrl ?>" style="font-size: 22px;font-weight:600;color:#4a0d66"><?=$news[2]->title?></a>
+                    <p style="font-size: 0.8rem;padding-top: 10px;"><?=$news[2]->summary?></p>
+                    <p>
+                        <a href="<?=Url::toRoute(['news/index']);?>" class="btn btn-secondary">更多新闻</a>
+                    </p>
+                </div>
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+            <div class="card" id="3">
+                <div class="sliderThumb" style=" background:url(<?= $url ?>9.jpg) 50% 50% no-repeat; background-size:cover;height:60%;width:100%">
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                </div>
+                <div class="sliderCaption">
+                    <a href="<?= $news[3]->sourceUrl ?>" style="font-size: 22px;font-weight:600;color:#4a0d66"><?=$news[3]->title?></a>
+                    <p style="font-size: 0.8rem;padding-top: 10px;"><?=$news[3]->summary?></p>
+                    <p>
+                        <a href="<?=Url::toRoute(['news/index']);?>" class="btn btn-secondary">更多新闻</a>
+                    </p>
+                </div>
+            </div>
+            <div class="card" id="4">
+                <div class="sliderThumb" style=" background:url(<?= $url ?>10.jpg) 50% 50% no-repeat; background-size:cover;height:60%;width:100%">
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+                </div>
+                <div class="sliderCaption">
+                    <a href="<?= $news[4]->sourceUrl ?>" style="font-size: 22px;font-weight:600;color:#4a0d66"><?=$news[4]->title?></a>
+                    <p style="font-size: 0.8rem;padding-top: 10px;"><?=$news[4]->summary?></p>
+                    <p>
+                        <a href="<?=Url::toRoute(['news/index']);?>" class="btn btn-secondary">更多新闻</a>
+                    </p>
+                </div>
+            </div>
+            <div class="card" id="5">
+                <div class="sliderThumb" style="background: url(<?= $url ?>11.jpg) 50% 50% no-repeat;background-size:cover;height:60%;width:100%" <div class="sliderCaption">
+                </div>
+                <div class="sliderCaption">
+                    <a href="<?= $news[5]->sourceUrl ?>" style="font-size: 22px;font-weight:600;color:#4a0d66"><?=$news[5]->title?></a>
+                    <p style="font-size: 0.8rem;padding-top: 10px;"><?=$news[5]->summary?></p>
+                    <p>
+                        <a href="<?=Url::toRoute(['news/index']);?>" class="btn btn-secondary">更多新闻</a>
+                    </p>
+                </div>
             </div>
         </div>
-
+        <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
     </div>
 </div>

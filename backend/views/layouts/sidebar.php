@@ -3,13 +3,14 @@
 /**
  * Team:ddl驱动队,NKU
  * coding by sunyiqi 2012810,20230204
+ * 侧栏外观
  */
 use yii\rest\IndexAction;
 ?>
 
 <aside class='shadow'>
 <?php
-echo \yii\bootstrap\Nav::widget([
+echo \yii\bootstrap4\Nav::widget([
     'options'=>[
         'class'=>'d-flex flex-column nav-pills'
     ],
@@ -32,11 +33,15 @@ echo \yii\bootstrap\Nav::widget([
         ],
         [
             'label'=>'News',
-            'url'=>['/cov-news/index']
+            'url'=>['/news/index']
         ],
         [
             'label'=>'Prediction and Discussion',
-            'url'=>['/cov-research/index']
+            'url'=>['/research/index']
+        ],
+        [
+            'label'=>'Timeline',
+            'url'=>['/timeline/index']
         ],
         [
             'label'=>'Contact Info',

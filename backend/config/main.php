@@ -2,7 +2,7 @@
 /**
  * Team:ddl驱动队,NKU
  * coding by sunyiqi 2012810,20230204
- * add pretty url
+ * add pretty url， add usercounter component
  */
 
 $params = array_merge(
@@ -14,6 +14,7 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'name'=>'俄乌冲突后台',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
@@ -49,6 +50,13 @@ return [
             'showScriptName' => false,
             'rules' => [
             ],
+        ],
+        'userCounter' => [
+            'class' => 'backend\components\UserCounter',
+            'tableUsers' => 'pcounter_users',
+            'tableSave' => 'pcounter_save',
+            'autoInstallTables' => true,
+            'onlineTime' => 10, // min
         ],
         
     ],

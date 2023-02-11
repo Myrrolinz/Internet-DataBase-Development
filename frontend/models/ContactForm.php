@@ -1,21 +1,33 @@
 <?php
-
+/**
+ * Team:ddl驱动队,NKU
+ * coding by songjiazhen,20230209
+ * a model for contactform
+ */
 namespace frontend\models;
 
 use Yii;
-use yii\base\Model;
 
 /**
- * ContactForm is the model behind the contact form.
+ * This is the model class for table "contact_form".
+ *
+ * @property string $firstname
+ * @property string $lastname
+ * @property string $wechatid
+ * @property string|null $phone
+ * @property string $message
+ * @property int|null $sex
+ * @property int $id
  */
-class ContactForm extends Model
+class ContactForm extends \yii\db\ActiveRecord
 {
-    public $name;
-    public $email;
-    public $subject;
-    public $body;
-    public $verifyCode;
-
+    /**
+     * {@inheritdoc}
+     */
+    public static function tableName()
+    {
+        return 'contact_form';
+    }
 
     /**
      * {@inheritdoc}
@@ -23,13 +35,23 @@ class ContactForm extends Model
     public function rules()
     {
         return [
-            // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body'], 'required'],
-            // email has to be a valid email address
-            ['email', 'email'],
-            // verifyCode needs to be entered correctly
-            ['verifyCode', 'captcha'],
+            [['firstname', 'lastname', 'wechatid', 'message'], 'required'],
+            [['sex'], 'integer'],
+            [['firstname', 'lastname', 'wechatid', 'phone'], 'string', 'max' => 50],
+            [['message'], 'string', 'max' => 255],
         ];
+    }
+    
+        public function contactinject()
+    { 
+        $contact_form = new contact_form;
+        $contact_form->firstname = $this->firstname;
+        $contact_form->lastname = $this->lastname;
+        $contact_form->sex= $this->sex;
+        $contact_form->wechatid= $this->wechatid;
+        $contact_form->phone= $this->phone;
+        $contact_form->message= $this->message;
+        return $contact_form->save() ;
     }
 
     /**
@@ -38,24 +60,13 @@ class ContactForm extends Model
     public function attributeLabels()
     {
         return [
-            'verifyCode' => 'Verification Code',
+            'firstname' => 'Firstname',
+            'lastname' => 'Lastname',
+            'wechatid' => 'Wechatid',
+            'phone' => 'Phone',
+            'message' => 'Message',
+            'sex' => 'Sex',
+            'id' => 'ID',
         ];
-    }
-
-    /**
-     * Sends an email to the specified email address using the information collected by this model.
-     *
-     * @param string $email the target email address
-     * @return bool whether the email was sent
-     */
-    public function sendEmail($email)
-    {
-        return Yii::$app->mailer->compose()
-            ->setTo($email)
-            ->setFrom([Yii::$app->params['senderEmail'] => Yii::$app->params['senderName']])
-            ->setReplyTo([$this->email => $this->name])
-            ->setSubject($this->subject)
-            ->setTextBody($this->body)
-            ->send();
     }
 }

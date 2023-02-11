@@ -3,6 +3,7 @@
 /**
  * Team:ddl驱动队,NKU
  * coding by sunyiqi 2012810,20230201
+ * 外观
  */
 
 
@@ -11,8 +12,8 @@
 
 use frontend\assets\AppAsset;
 use yii\helpers\Html;
-use yii\bootstrap4\Nav;
-use yii\bootstrap4\NavBar;
+use yii\bootstrap\Nav;
+use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 

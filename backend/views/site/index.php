@@ -1,53 +1,85 @@
 <?php
-
+/**
+ * Team:ddl驱动队,NKU
+ * coding by sunyiqi 2012810,20230210
+ * home页面
+ */
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = '俄乌冲突资料站后台';
 ?>
-<div class="site-index">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@4.8.0/dist/echarts.min.js"></script></script>
+</head>
+</html>
+<div>
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
-    </div>
+    <p>当前在线用户数量: <span><?php echo Yii::$app->userCounter->getOnline(); ?></span></p>
+    <p>今日访问量: <span><?php echo Yii::$app->userCounter->getToday(); ?></span></p>
+    <p>昨日访问量: <span><?php echo Yii::$app->userCounter->getYesterday(); ?></span></p>
+    <p>网站总访问量: <span><?php echo Yii::$app->userCounter->getTotal(); ?></span></p>
+    <p>网站当日最大访问量: <span><?php echo Yii::$app->userCounter->getMaximal(); ?></span></p>
+    <p>网站最大访问量日期: <span><?php echo date('Y.m.d', Yii::$app->userCounter->getMaximalTime()); ?></span></p>
 </div>
+
+<body>
+
+
+    <div id="main" style="width: 800px;height:400px;"></div>
+    <script type="text/javascript">
+
+        var myChart = echarts.init(document.getElementById('main'));
+        var today=<?php echo Yii::$app->userCounter->getToday(); ?>;
+        var yesterday=<?php echo Yii::$app->userCounter->getYesterday(); ?>;
+        var maximal=<?php echo Yii::$app->userCounter->getMaximal(); ?>;
+        var total=<?php echo Yii::$app->userCounter->getTotal(); ?>;
+        var onuser=<?php echo Yii::$app->userCounter->getOnline(); ?>;
+
+        var option = {
+        	grid:{
+        		left:'3%',
+        		right:'30%'
+        	},
+            title: {
+                text: '网站访客数据'
+            },
+            tooltip: {},
+            legend: {
+                data:['浏览量']
+            },
+            xAxis: {
+                data: ["今日访问","昨日访问","单日最大","总访问","当前在线"]
+            },
+            yAxis: {},
+            series: [{
+                name: '浏览量',
+                type: 'bar',
+                itemStyle:{
+                   normal:{
+                   color:'#4ad2ff'
+                                    }
+                                },
+
+                data: [today,yesterday,maximal,total,onuser]
+            }]
+        };
+
+        myChart.setOption(option);
+    </script>
+</body>
+
+<style>
+p{
+    width: 280px;
+    border: groove 3px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #61a7e4;
+}
+span{
+    color: #d81414;
+    float: center;
+}

@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team:ddl驱动队,NKU
+ * coding by sunyiqi 2012810,20230205
+ * email相关
+ */
 namespace frontend\models;
 
 use common\models\User;

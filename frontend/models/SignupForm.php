@@ -1,4 +1,9 @@
 <?php
+/**
+ * Team:ddl驱动队,NKU
+ * coding by sunyiqi 2012810,20230205
+ * signup相关
+ */
 namespace frontend\models;
 
 use Yii;

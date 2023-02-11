@@ -1,4 +1,9 @@
 <?php
+/**
+ * Team:ddl驱动队,NKU
+ * coding by sunyiqi 2012810,20230207
+ * 添加页面间跳转动作
+ */
 namespace backend\controllers;
 
 use Yii;
@@ -22,7 +27,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['login', 'error','homework'],
                         'allow' => true,
                     ],
                     [
@@ -62,6 +67,22 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
+
+    /**
+     * Displays homeworkpage.
+     *
+     * @return string
+     */
+    public function actionHomework()
+    {
+        if (Yii::$app->user->isGuest) {
+            return $this->actionLogin();
+        }
+        else{
+        return $this->render('homework');
+        }
+    }
+
 
     /**
      * Login action.

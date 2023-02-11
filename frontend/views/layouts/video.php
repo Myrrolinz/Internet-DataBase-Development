@@ -3,6 +3,7 @@
 /**
  * Team:ddl驱动队,NKU
  * coding by sunyiqi 2012810,20230201
+ * video 外观
  */
 
 /* @var $this \yii\web\View */
@@ -10,8 +11,8 @@
 
 use frontend\assets\AppAsset;
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
+use yii\bootstrap4\Nav;
+use yii\bootstrap4\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 
@@ -35,7 +36,7 @@ AppAsset::register($this);
     <?php $this->beginBody() ?>
 
     <div class="wrap h-100 d-flex flex-column">
-        <?php echo $this->render('header') ?>
+        <?php echo $this->render('header2') ?>
 
 
         <main class="d-flex">

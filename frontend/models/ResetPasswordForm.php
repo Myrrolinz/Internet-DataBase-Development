@@ -1,4 +1,9 @@
 <?php
+/**
+ * Team:ddl驱动队,NKU
+ * coding by sunyiqi 2012810,20230205
+ * 重置密码相关
+ */
 namespace frontend\models;
 
 use yii\base\InvalidArgumentException;

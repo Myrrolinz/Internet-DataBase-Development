@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team:ddl驱动队,NKU
+ * coding by sunyiqi 2012810,20230131
+ * 框架生成
+ */
 namespace backend\assets;
 
 use yii\web\AssetBundle;
@@ -15,9 +19,10 @@ class AppAsset extends AssetBundle
         'css/site.css',
     ];
     public $js = [
+        'app.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap4\BootstrapAsset',
     ];
 }

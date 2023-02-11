@@ -2,6 +2,7 @@
 /**
  * Team:ddl驱动队,NKU
  * coding by sunyiqi 2012810,20230201
+ * 侧边栏外观
  */
 
 use yii\rest\IndexAction;
@@ -23,7 +24,7 @@ use yii\rest\IndexAction;
         $menuItems[]=['label'=>'My videos','url'=>['/video/myvideo']];
     }?>
 <?php
-echo \yii\bootstrap\Nav::widget([
+echo \yii\bootstrap4\Nav::widget([
     'options'=>[
         'class'=>'d-flex flex-column nav-pills'
     ],

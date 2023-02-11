@@ -1,0 +1,32 @@
+/**
+ * Team:布利啾啾迪布利多,NKU
+ * coding by LiYanxin 1813265,20200504
+ */
+
+
+
+
+.background {
+  position: relative;
+  top:-1460px;
+  left: 0;
+  background-image:
+    url(http://stash.rachelnabors.com/24ways2012/background_mountain5.png),
+    url(http://stash.rachelnabors.com/24ways2012/background_mountain4.png),
+    url(http://stash.rachelnabors.com/24ways2012/background_mountain3.png),
+    url(http://stash.rachelnabors.com/24ways2012/background_mountain2.png),
+    url(http://stash.rachelnabors.com/24ways2012/background_mountain1.png);
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  z-index: 1;
+  animation: parallax_bg linear 40s infinite;
+}
+
+@keyframes parallax_bg {
+  100% { background-position-x: 2400px, 2000px, 1800px, 1600px, 1200px;}
+}
+
+body {
+    background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%),
+    #d2d2d2 url(http://stash.rachelnabors.com/24ways2012/background_clouds.png);
+}
