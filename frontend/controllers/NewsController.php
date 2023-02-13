@@ -65,12 +65,11 @@ class NewsController extends Controller
         ];
     }
 
-
     public function actionIndex()
     {
         $this->layout = 'blog';
-        $data = News::getAll(16);
-
+        $data = News::getAll(16);//获取所有新闻
+        // 将新闻分为四组
         $data1 = $data['news'][0];
         for ($i = 1, $j = 0; $i < 5;) {
             $data2[$j++] = $data['news'][$i++];
@@ -81,7 +80,7 @@ class NewsController extends Controller
         for ($i = 10, $j = 0; $i < 16;) {
             $data4[$j++] = $data['news'][$i++];
         }
-        $videos = Video::getAll(5);
+        $videos = Video::getAll(5);//获取所有视频
         return $this->render("index", [
             'news1' => $data1,
             'news2' => $data2,

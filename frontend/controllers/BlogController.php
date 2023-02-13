@@ -75,21 +75,21 @@ class BlogController extends Controller
         ];
     }
 
-    public function actionView($id)
+    public function actionView($id) // 用于展示view页面的样式
     {
-        $article = Article::findOne($id);
-
+        $article = Article::findOne($id); // 通过id找到对应的文章
+        // 找到热门文章
         $popular = Article::Popular();
-
+        // 找到最新文章
         $recent = Article::Recent();
-
+        // 找到所有分类
         $categories = Category::find()->all();
-
+        // 找到所有评论 通过article_id
         $comments = $article->ArticleComments();
-        $commentForm = new CommentFormB();
+        $commentForm = new CommentFormB();// 评论表单
 
         $article->viewedCounter();
-
+        // 返回view页面
         return $this->render('view', [
             'article' => $article,
             'popular' => $popular,
@@ -99,9 +99,10 @@ class BlogController extends Controller
             'commentForm' => $commentForm
         ]);
     }
-
+    // 在单击“我的”后，跳转到mypost.php页面
     public function actionMypost()
-    {
+    {   
+        // 判断是否登录
         if (!Yii::$app->user->isGuest) {
             $this->layout = 'blog';
             $searchModel = new ArticleSearch();
@@ -115,7 +116,6 @@ class BlogController extends Controller
         }
         return $this->redirect(['site/login']);
     }
-
 
 
     public function actionInfo($id)
@@ -140,13 +140,13 @@ class BlogController extends Controller
         ]);
     }
 
-
+    // 用来展示blog页面的样式
     public function actionBlog()
     {
 
         $this->layout = 'blog';
-        $data = Article::getAll(6);
-
+        $data = Article::getAll(6);// 通过getAll方法找到所有文章
+        // 通过for循环将文章分为两个数组
         for ($i = 0, $j = 0; $i < sizeof($data['articles']); $i += 2) {
             $data1[$j++] = $data['articles'][$i];
         }
@@ -172,7 +172,7 @@ class BlogController extends Controller
             'categories' => $categories
         ]);
     }
-
+    // 用于跳转到blog目录部分
     public function actionCategory($id)
     {
         $data = Category::getArticlesByCategory($id);
@@ -191,20 +191,22 @@ class BlogController extends Controller
             'categories' => $categories
         ]);
     }
-
+    // 创建新的Action动作
     public function actionCreate()
     {
+        // 判断是否登录
         if (!Yii::$app->user->isGuest) { 
         $this->layout = 'blog';
         $model = new Article();
-
+        // 判断是否加载数据
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['info', 'id' => $model->id]);
         }
-
+        // 返回create页面
         return $this->render('create', [
             'model' => $model,
         ]);}
+        // 如果没有登录，跳转到登录页面
         return $this->redirect(['site/login']);
     }
 
